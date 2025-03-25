@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+.game-container {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    border: 2px solid white;
+    margin: 20px auto;
+    background: url('assets/background.webp') no-repeat center center/cover;
+}
+
+.character {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 20px;
+}
+
+#player {
+    background: url('https://raw.githubusercontent.com/TanZng/TanZng/master/assets/hollor_knight3.gif') no-repeat center center/contain;
+    width: 30%;
+    height: 40%;
+    background-size: cover;
+    position: relative;
+    left: 0px;
+    top: 50%;
+}
+
+.boss {
+    background: url('https://i.pinimg.com/originals/cf/58/e8/cf58e8533f5d3bdff75366d5ad5df046.gif') no-repeat center center/contain;
+    right: -200px;
+    top: -60px;
+    width: 70%;
+    height: 80%;
+    background-size: cover;
+    position: relative;
+}
+
+.hud {
+    margin-top: 20px;
+}
+
+.health-bar {
+    width: 200px;
+    height: 20px;
+    background: red;
+    margin: auto;
+    border: 2px solid white;
+}
+
+.health {
+    width: 100%;
+    height: 100%;
+    background: green;
+}
