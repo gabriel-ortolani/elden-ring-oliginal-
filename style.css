@@ -98,16 +98,16 @@ body {
         height: 20px;
         margin: 10px auto;
     }
-    .mobile-controls {
+    .hud {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 10vw;
         margin-top: 20px;
     }
-    .mobile-controls button {
+    .hud button {
         font-size: 2rem;
-        width: 60px;
+        width: 120px;
         height: 60px;
         border-radius: 50%;
         border: none;
@@ -120,7 +120,7 @@ body {
 
 /* Garante que os controles mobile fiquem visíveis apenas em telas pequenas */
 @media (min-width: 601px) {
-    .mobile-controls {
+    #left-btn, #right-btn {
         display: none;
     }
 }
