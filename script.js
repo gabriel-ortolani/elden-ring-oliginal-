@@ -7,7 +7,6 @@ let player = document.getElementById("player");
 let movingLeft = false;
 let movingRight = false;
 let moveInterval = null;
-let movementIndicator = document.getElementById("movement-indicator"); // Novo elemento para o aviso visual
 
 // Função para movimentar o jogador (tanto para o teclado quanto para os botões móveis)
 function movePlayer(eventOrDirection) {
@@ -118,7 +117,10 @@ function moveLeftTouch(start) {
         if (moveInterval) clearInterval(moveInterval);
         moveInterval = setInterval(() => movePlayer("a"), 100);
     } else {
-        if (moveInterval) clearInterval(moveInterval);
+        if (moveInterval) {
+            clearInterval(moveInterval);
+            moveInterval = null;
+        }
     }
 }
 function moveRightTouch(start) {
@@ -126,7 +128,10 @@ function moveRightTouch(start) {
         if (moveInterval) clearInterval(moveInterval);
         moveInterval = setInterval(() => movePlayer("d"), 100);
     } else {
-        if (moveInterval) clearInterval(moveInterval);
+        if (moveInterval) {
+            clearInterval(moveInterval);
+            moveInterval = null;
+        }
     }
 }
 
