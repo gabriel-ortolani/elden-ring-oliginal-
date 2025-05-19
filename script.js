@@ -112,16 +112,38 @@ function movePlayerTouch(direction) {
     movePlayer(direction);
 }
 
+// Funções para toque contínuo nos botões mobile
+function moveLeftTouch(start) {
+    if (start) {
+        if (moveInterval) clearInterval(moveInterval);
+        moveInterval = setInterval(() => movePlayer("a"), 100);
+    } else {
+        if (moveInterval) clearInterval(moveInterval);
+    }
+}
+function moveRightTouch(start) {
+    if (start) {
+        if (moveInterval) clearInterval(moveInterval);
+        moveInterval = setInterval(() => movePlayer("d"), 100);
+    } else {
+        if (moveInterval) clearInterval(moveInterval);
+    }
+}
+
 window.onload = function() {
     player = document.getElementById("player");
 
     const leftBtn = document.getElementById("left-btn");
     const rightBtn = document.getElementById("right-btn");
     if (leftBtn) {
-        leftBtn.addEventListener("touchstart", function(e) { e.preventDefault(); movePlayerTouch("a"); });
+        leftBtn.addEventListener("touchstart", function(e) { e.preventDefault(); moveLeftTouch(true); });
+        leftBtn.addEventListener("touchend", function(e) { e.preventDefault(); moveLeftTouch(false); });
+        leftBtn.addEventListener("touchcancel", function(e) { e.preventDefault(); moveLeftTouch(false); });
     }
     if (rightBtn) {
-        rightBtn.addEventListener("touchstart", function(e) { e.preventDefault(); movePlayerTouch("d"); });
+        rightBtn.addEventListener("touchstart", function(e) { e.preventDefault(); moveRightTouch(true); });
+        rightBtn.addEventListener("touchend", function(e) { e.preventDefault(); moveRightTouch(false); });
+        rightBtn.addEventListener("touchcancel", function(e) { e.preventDefault(); moveRightTouch(false); });
     }
     // Botão de ataque mobile
     const attackBtn = document.getElementById("attack-btn");
