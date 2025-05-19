@@ -66,7 +66,7 @@ body {
 }
 
 /* Responsividade para telas pequenas */
-@media (max-width: 799px) {
+@media (max-width: 849px) {
     body {
         font-size: 16px;
         padding: 0;
@@ -119,7 +119,7 @@ body {
 }
 
 /* Garante que os controles mobile fiquem visíveis apenas em telas pequenas */
-@media (min-width: 800px) {
+@media (min-width: 850px) {
     #left-btn, #right-btn{
         display: none;
     }
