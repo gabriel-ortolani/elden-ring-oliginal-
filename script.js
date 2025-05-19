@@ -14,7 +14,7 @@ function movePlayer(eventOrDirection) {
     let top = parseInt(window.getComputedStyle(player).getPropertyValue("top"));
     let key = typeof eventOrDirection === "string" ? eventOrDirection : eventOrDirection.key;
 
-    if ((key === "d" || key === "right") && left < 550) { // Direita
+    if ((key === "d" || key === "right") && left < 0) { // Direita
         player.style.left = left + 20 + "px";
     }
     if ((key === "a" || key === "left") && left > 0) { // Esquerda
